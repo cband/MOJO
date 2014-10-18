@@ -16,6 +16,7 @@ There are three main steps to get MOJO up and running:
 ### Download pre-built binaries
 
 Pre-compiled MOJO binaries for Linux are available for download from [here](http://dmel.uchicago.edu/~chai/MOJO/releases/).  Binaries were generated on Ubuntu (kernel-2.6.32) with GCC 4.8.1 and should be compatible with most 64-bit Linux distributions. 
+
     > ### Find latest release here: http://dmel.uchicago.edu/~chai/MOJO/releases/
     > wget http://dmel.uchicago.edu/~chai/MOJO/releases/MOJO.<latest_release>.tar.gz
     > tar -zxf MOJO.<latest_release>.tar.gz
