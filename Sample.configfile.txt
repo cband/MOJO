@@ -1,0 +1,52 @@
+#########################################
+###      MOJO configuration file      ###
+#########################################
+
+mojo_install_dir               = [MOJO_top_level_directory]/bin/
+mojo_reference_dir             = [MOJO_top_level_directory]/reference.hg19.Ensembl/
+mojo_tools_dir                 = [MOJO_top_level_directory]/external/
+
+#####################################################
+#### All options below can be left unchanged    #####
+#####################################################
+
+### Sample Information
+#fastq_encoding                =                ## empty value will let MOJO infer fastq_encoding
+
+### Binaries for supporting tools  
+samtools_binary                =   <TOOLS>/samtools/samtools		
+bwa_binary                     =   <TOOLS>/bwa/bwa
+bowtie2_binary                 =   <TOOLS>/bowtie2/bowtie2
+bowtie2_build_binary           =   <TOOLS>/bowtie2/bowtie2-build
+blat_binary                    =   <TOOLS>/blat/blat
+
+### Index files
+bwa_transcriptome_index        =   <REF>/transcriptome/transcriptome
+bowtie2_all_isoforms_index     =   <REF>/all_isoforms/all.isoforms
+bowtie2_genome_index           =   <REF>/genome/genome
+blat_genome_2bit               =   <REF>/blat_filter_refs/genome.2bit
+blat_reference_junctions_2bit  =   <REF>/blat_filter_refs/allReferenceJunctsDB.2bit
+blat_filter_chroms_dir         =   <REF>/blat_filter_refs/
+#blat_filter_chroms_csv        =   default   ### default will fetch all chr<>.2bit files from the blat_filter_chroms_dir
+#blat_filter_chroms_csv        =   chr1,chrX,chrOthers,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrY,chrM
+
+### Reference files
+master_gene_file               =   default           ## default is <REF>/gene_model/Gene.txt
+master_exon_file               =   default           ## default is <REF>/gene_model/Exon.txt
+master_isoform_file            =   default           ## default is <REF>/gene_model/Isoform.txt
+
+### Filtering files
+megablast_output_file          =   default           ## default is <REF>/gene_model/gene2gene.megablast.txt
+repeat_masker_file             =   default           ## default is <REF>/gene_model/rmsk.regions.txt
+
+### Compute Params
+max_bwa_mem                     = 6                  ## minimum memory (in GB) required per bwa thread; humans: 6, mouse: 4, dmel: 3
+
+### MOJO Run Parameters
+min_span                        = 2,2,80000000
+read_through                    = 200000
+junct_mismatch                  = 0.03
+
+### Supplementary Binaries
+split_fastq_binary              = default            ## default is <MOJO_install_directory>/StreamNthFastqSplit
+filter_junct_output_binary      = default            ## default is <MOJO_install_directory>/FilterJunctAlignOutput
